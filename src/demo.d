@@ -15,5 +15,5 @@ jstring Java_com_xxxx_xxx_Class1_method1(JNIEnv* env, jclass clazz, jstring mess
     const string result = _message.to!string ~ " return to Java function.";
     env.ReleaseStringUTFChars(message, _message);
 
-    env.NewStringUTF(toStringz(result));
+    return env.NewStringUTF(toStringz(result));
 }

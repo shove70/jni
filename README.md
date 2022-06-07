@@ -2,11 +2,13 @@
 
 Compile:
 
+```
 dmd src/demo.d src/jni.d -fPIC -shared -of./libdemo.so -defaultlib=libphobos2.so
-
+```
 
 demo.d:
 
+```d
 import core.runtime;
 import std.string;
 import std.conv;
@@ -26,3 +28,4 @@ jstring Java_com_xxxx_xxx_ClassA_method1(JNIEnv* env, jclass clazz, jstring mess
 
     env.NewStringUTF(toStringz(result));
 }
+```
