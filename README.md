@@ -19,13 +19,14 @@ extern (C):
 
 jstring Java_com_xxxx_xxx_ClassA_method1(JNIEnv* env, jclass clazz, jstring message)
 {
-	rt_init();
+    rt_init();
 
     const char* _message = env.GetStringUTFChars(message, null);
 
     const string result = _message.to!string ~ " return to Java function.";
     env.ReleaseStringUTFChars(message, _message);
 
-    env.NewStringUTF(toStringz(result));
+    return env.NewStringUTF(toStringz(result));
 }
 ```
+

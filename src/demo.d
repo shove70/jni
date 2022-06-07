@@ -8,7 +8,7 @@ extern (C):
 
 jstring Java_com_xxxx_xxx_Class1_method1(JNIEnv* env, jclass clazz, jstring message)
 {
-	rt_init();
+    rt_init();
 
     const char* _message = env.GetStringUTFChars(message, null);
 
@@ -17,3 +17,4 @@ jstring Java_com_xxxx_xxx_Class1_method1(JNIEnv* env, jclass clazz, jstring mess
 
     return env.NewStringUTF(toStringz(result));
 }
+
